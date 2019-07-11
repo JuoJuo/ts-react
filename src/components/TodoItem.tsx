@@ -1,8 +1,11 @@
-import * as React from 'react';
+import * as React from "react";
 
-
-export default class TodoItem extends React.Component {
-    render(){
-        return <input type="text"/>;
-    }
+interface IProps {
+  title: string;
 }
+
+const TodoItem: React.SFC<IProps> = (props: IProps) => {
+  return <div>{props.title}</div>;
+};
+
+export default TodoItem;

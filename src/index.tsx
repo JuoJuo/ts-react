@@ -7,8 +7,10 @@ import Counter from "./components/Counter";
 ReactDOM.render(
   <>
     <Counter name="lrj"/>
+    <hr/>
+    <TodoItem title="函数组件"/>
+    <hr/>
     <TodoInput />
-    <TodoItem />
   </>,
   document.getElementById("root")
 );
