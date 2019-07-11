@@ -5,12 +5,18 @@ import TodoItem from "./components/TodoItem";
 import Counter from "./components/Counter";
 import StoredCounter from "./components/StoredCounter";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import store from "./store";
+/**
+ * 1.在仓库中保存当前的路径状态
+ * 2.如果我们希望在action中跳转路径，希望用派发动作的方式跳转路径的话
+ */
+import {ConnectedRouter} from 'connected-react-router';
+import history from './store/history';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <ConnectedRouter history={history}>
       <>
         <Link to="/a">按钮1</Link>
         <Link to="/b">按钮2</Link>
@@ -31,7 +37,7 @@ ReactDOM.render(
         />
         <Route path="/d" component={() => <TodoInput />} />
       </>
-    </Router>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById("root")
 );

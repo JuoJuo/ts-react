@@ -1,4 +1,5 @@
 import * as types from "../action-types";
+import { push } from "connected-react-router";
 
 // action返回值的类型，自己定义
 export interface incrementAction {
@@ -19,5 +20,8 @@ export default {
   },
   decrement(n: number): decrementAction {
     return { type: types.DECREMENT, payload: n };
+  },
+  goto(to: string){
+    return push(to);
   }
 };
