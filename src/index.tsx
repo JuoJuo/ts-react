@@ -6,7 +6,7 @@ import Counter from "./components/Counter";
 
 ReactDOM.render(
   <>
-    <Counter />
+    <Counter name="lrj"/>
     <TodoInput />
     <TodoItem />
   </>,
