@@ -28,6 +28,7 @@ export default class Counter extends React.Component<Props, State> {
     }
     return (
       <>
+        {this.props.name}:
         <p style={style}>{this.state.number}</p>
         <input
           type="text"
